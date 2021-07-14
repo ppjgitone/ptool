@@ -1,0 +1,30 @@
+server:
+  port: 8089
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@192.168.100.205:1521:orcl
+    username: audit_hz
+    password: audit_hz
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    # 指定连接池换成druid,如果用druid-spring-boot-starter。则可以不指定
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      #初始化大小
+      initialSize: 5
+      #最小值
+      minIdle: 5
+      #最大值
+      maxActive: 20
+      #最大等待时间，配置获取连接等待超时，时间单位都是毫秒ms
+      maxWait: 60000
+      #配置间隔多久才进行一次检测，检测需要关闭的空闲连接
+      timeBetweenEvictionRunsMillis: 60000
+      #配置一个连接在池中最小生存的时间
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1 FROM DUAL
+      poolPreparedStatements: true
+mybatis:
+  type-aliases-package: com.project.jpp.ptool.mapper
+  configuration:
+    call-setters-on-nulls: true
+    map-underscore-to-camel-case: true
