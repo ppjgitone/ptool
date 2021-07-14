@@ -1,6 +1,7 @@
 package com.project.jpp.ptool.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -9,9 +10,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @package: com.project.jpp.ptool.controller
  * @auther: jpp
  * @date: 2021/7/12 14:20
- * @Description: diyige
+ * @Description: dirge
  */
 @Controller
+@CrossOrigin //跨域
 public class FirstController {
     @RequestMapping("/")
     @ResponseBody
